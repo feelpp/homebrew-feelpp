@@ -8,10 +8,10 @@ end
 
 class Feelpp < Formula
   homepage 'http://www.feelpp.org'
-  url 'https://github.com/feelpp/feelpp/releases/download/v0.100.0/feelpp-0.100.0.tar.gz'
+  url 'https://github.com/feelpp/feelpp/releases/download/v0.101.1/feelpp-0.101.1.tar.gz'
   head 'https://github.com/feelpp/feelpp.git', :branch => 'develop'
-  version '0.100.0'
-  sha1 '98a8ada6f8930a2d00886909f819a655721448b4'
+  version '0.101.1'
+  sha256 '70418fb0ce9f5069190fcc1677615663dbca71cea39e2b858356476a9e8627cf'
 
 
   depends_on 'autoconf'
