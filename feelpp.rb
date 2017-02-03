@@ -20,12 +20,13 @@ class Feelpp < Formula
   sha256 '70418fb0ce9f5069190fcc1677615663dbca71cea39e2b858356476a9e8627cf'
 
 
-  depends_on 'autoconf'
-  depends_on 'automake'
-  depends_on 'libtool'
+  depends_on 'autoconf' => :build
+  depends_on 'automake' => :build
+  depends_on 'libtool' => :build
   depends_on 'cmake' => :build
   depends_on 'cln'
   depends_on 'eigen'
+  depends_on 'hdf5' => ['with-mpi']
   depends_on 'gmsh' => :recommended #feel++ can download and install it
   depends_on 'scalapack'
   depends_on 'petsc'
