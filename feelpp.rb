@@ -45,6 +45,7 @@ class Feelpp < Formula
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "..", *args
+      system "make", "install-feelpp-lib", "-j#{ENV.make_jobs}"
     end
   end
 
