@@ -45,7 +45,6 @@ class Feelpp < Formula
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "..", *args
-      system "make", "quickstart", "-j#{ENV.make_jobs}"
     end
   end
 
@@ -55,10 +54,10 @@ class Feelpp < Formula
     (testpath/"CMakeLists.txt").write <<-EOS.undent
       if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR} )
         find_package(Feel++
-                PATHS $ENV{FEELPP_DIR}/share/feel/cmake/modules
-                      /usr/share/feel/cmake/modules
-                      /usr/local/share/feel/cmake/modules
-                      /opt/share/feel/cmake/modules
+                PATHS $ENV{FEELPP_DIR}/share/feelpp/feel/cmake/modules
+                      /usr/share/feelpp/feel/cmake/modules
+                      /usr/local/share/feelpp/feel/cmake/modules
+                      /opt/share/feelpp/feel/cmake/modules
                       )
         if(NOT FEELPP_FOUND)
           message(FATAL_ERROR "Feel++ was not found on your system. Make sure to install it and specify the FEELPP_DIR to reference the installation directory.")
