@@ -12,7 +12,7 @@ class GitNoSubmoduleDownloadStrategy < GitDownloadStrategy
   end
 end
 
-class Feelpp < Formula
+class FeelppCrb < Formula
   homepage 'http://www.feelpp.org'
   url 'https://github.com/feelpp/feelpp/releases/download/v0.101.1/feelpp-0.101.1.tar.gz'
   head 'https://github.com/feelpp/feelpp.git', :using => GitNoSubmoduleDownloadStrategy, :branch => 'develop'
