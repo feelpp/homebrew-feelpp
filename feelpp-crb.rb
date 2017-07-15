@@ -25,7 +25,7 @@ class FeelppCrb < Formula
   def install
     Dir.mkdir 'opt'
     cd 'opt' do
-      system "../configure", "-r", "--root=../applications/crb", *args
+      system "cmake", "../applications/crb", *args
       system "make", "-j#{ENV.make_jobs}","&&","make","install"
     end
   end

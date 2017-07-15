@@ -25,7 +25,7 @@ class FeelppBase < Formula
   def install
     Dir.mkdir 'opt'
     cd 'opt' do
-      system "../configure", "-r", "--root=../quickstart", *args
+      system "cmake", "../quickstart", *args
       system "make", "-j#{ENV.make_jobs}","&&","make","install"
     end
   end

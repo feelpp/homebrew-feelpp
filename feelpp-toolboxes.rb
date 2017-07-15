@@ -25,7 +25,7 @@ class FeelppToolboxes < Formula
   def install
     Dir.mkdir 'opt'
     cd 'opt' do
-      system "../configure", "-r", "--root=../toolboxes", *args
+      system "cmake","../toolboxes", *args
       system "make", "-j#{ENV.make_jobs}","&&","make","install"
     end
   end
