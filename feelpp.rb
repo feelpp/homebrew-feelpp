@@ -48,8 +48,10 @@ class Feelpp < Formula
     cd 'opt' do
       system "cmake", "..", *args
       dirs.each do |dir|
-        system "cd", "#{dir}", "&&", "make", "-j#{ENV.make_jobs}"
-        system "cd", "#{dir}", "&&", "make", "install"
+        cd '#{dir}' do
+          system "make", "-j#{ENV.make_jobs}"
+          system "make", "install"
+        end
       end
     end
   end
