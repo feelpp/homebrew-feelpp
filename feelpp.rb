@@ -8,7 +8,7 @@ class GitNoSubmoduleDownloadStrategy < GitDownloadStrategy
   end
   def update_submodules
     safe_system 'git', 'submodule', '--quiet', 'deinit', '-f', '--all'
-    safe_system 'git', 'submodule', '--quiet', 'update', '--init', 'contrib'
+    safe_system 'git', 'submodule', '--quiet', 'update', '--init', '--recursive'
   end
 end
 
@@ -48,9 +48,8 @@ class Feelpp < Formula
     cd 'opt' do
       system "cmake", "..", *args
       dirs.each do |dir|
-        system "cd", "#{dir}"
-        system "make", "-j#{ENV.make_jobs}"
-        system "make", "install"
+        system "cd", "#{dir}", "&&", "make", "-j#{ENV.make_jobs}"
+        system "cd", "#{dir}", "&&", "make", "install"
       end
     end
   end
