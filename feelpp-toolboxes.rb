@@ -23,6 +23,7 @@ class FeelppToolboxes < Formula
   depends_on 'feelpp' 
 
   def install
+    args=std_cmake_args+ ['-DFEELPP_ENABLE_TESTS=OFF', '-Wno-dev']
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake","../toolboxes", *args
