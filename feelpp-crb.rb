@@ -27,7 +27,8 @@ class FeelppCrb < Formula
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "../applications/crb", *args
-      system "make", "-j#{ENV.make_jobs}","&&","make","install"
+      system "make", "-j#{ENV.make_jobs}"
+      system "make","install"
     end
   end
 

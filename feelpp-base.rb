@@ -27,7 +27,8 @@ class FeelppBase < Formula
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "../quickstart", *args
-      system "make", "-j#{ENV.make_jobs}","&&","make","install"
+      system "make", "-j#{ENV.make_jobs}"
+      system "make","install"
     end
   end
 
