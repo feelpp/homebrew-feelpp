@@ -25,6 +25,8 @@ class Feelpp < Formula
   depends_on 'libtool' => :build
   depends_on 'cmake' => :build
   depends_on 'cln'
+  depends_on 'bson'
+  depends_on 'mongoc'
   depends_on 'eigen'
   depends_on 'hdf5' => ['with-mpi']
   depends_on 'gmsh' => :recommended #feel++ can download and install it
@@ -33,6 +35,7 @@ class Feelpp < Formula
   depends_on 'slepc' => :recommended
   depends_on 'boost' => ['c++11']
   depends_on 'boost-mpi' => ['c++11']
+  depends_on 'boost-python' => ['c++11']  
   depends_on 'ann' => :recommended
   depends_on 'glpk' => :recommended
   depends_on 'doxygen' => :optional
@@ -45,6 +48,9 @@ class Feelpp < Formula
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "..", *args
+      system "cd", "contrib", "&&", "make", "install", "-j#{ENV.make_jobs}"
+      system "cd", "feel", "&&", "make", "install", "-j#{ENV.make_jobs}"
+      system "cd", "applications/mesh", "&&", "make", "install", "-j#{ENV.make_jobs}"
       system "make", "install-feelpp-lib", "-j#{ENV.make_jobs}"
     end
   end
