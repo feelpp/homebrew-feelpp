@@ -47,10 +47,10 @@ class Feelpp < Formula
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "..", *args
-      system "cd", "cmake", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install"
-      system "cd", "contrib", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install"
-      system "cd", "feel", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install"
-      system "cd", "applications/mesh", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install"
+      system "(cd", "cmake", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install)"
+      system "(cd", "contrib", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install)"
+      system "(cd", "feel", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install)"
+      system "(cd", "applications/mesh", "&&", "make", "-j#{ENV.make_jobs}", "&&", "make", "install)"
       #system "make", "install-feelpp-lib", "-j#{ENV.make_jobs}"
     end
   end
