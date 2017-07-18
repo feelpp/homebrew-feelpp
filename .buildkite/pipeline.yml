@@ -1,6 +1,6 @@
 steps:
  - name: ':mac: :beer: feelpp'
-   command: "brew install -v --HEAD feelpp"
+   command: "brew unlink feelpp && brew install -v --HEAD feelpp"
    agents:
      osx: true
    env:
