@@ -14,9 +14,9 @@ end
 
 class Feelpp < Formula
   homepage 'http://www.feelpp.org'
-  url 'https://github.com/feelpp/feelpp/releases/download/v0.101.1/feelpp-0.101.1.tar.gz'
+  url 'https://github.com/feelpp/feelpp/releases/download/v0.104.0-beta.1/feelpp-0.104.0-beta.1.tar.gz'
   head 'https://github.com/feelpp/feelpp.git', :using => GitNoSubmoduleDownloadStrategy, :branch => 'develop'
-  version '0.101.1'
+  version '0.104.0-beta.1'
   sha256 '70418fb0ce9f5069190fcc1677615663dbca71cea39e2b858356476a9e8627cf'
 
 
@@ -34,7 +34,7 @@ class Feelpp < Formula
   depends_on 'slepc' => :recommended
   depends_on 'boost' => ['c++11']
   depends_on 'boost-mpi' => ['c++11']
-  depends_on 'boost-python' => ['c++11']  
+  depends_on 'boost-python' => ['c++11']
   depends_on 'ann' => :recommended
   depends_on 'glpk' => :recommended
   depends_on 'doxygen' => :optional
