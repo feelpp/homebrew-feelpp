@@ -20,7 +20,7 @@ class FeelppCrb < Formula
   sha256 '70418fb0ce9f5069190fcc1677615663dbca71cea39e2b858356476a9e8627cf'
 
 
-  depends_on 'feelpp' 
+  depends_on 'feelpp-toolboxes' 
 
   def install
     args=std_cmake_args+ ['-DFEELPP_ENABLE_TESTS=OFF', '-Wno-dev']
