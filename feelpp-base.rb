@@ -33,7 +33,6 @@ class FeelppBase < Formula
   end
 
   test do
-    system 'make', 'qs_add_testcase_laplacian'
-    system 'mpirun','-np',"#{ENV.make_jobs}", 'feelpp_qs_laplacian_2d', '--config-file','laplacian/circle/circle.cfg'
+    system 'ctest', '-R', '.'
   end
 end

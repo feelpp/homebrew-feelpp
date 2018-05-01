@@ -41,7 +41,7 @@ class Feelpp < Formula
 
   def install
     # had to keep application for mesh_partitioner
-    args=std_cmake_args+ ['-DFEELPP_ENABLE_TESTS=OFF', '-Wno-dev']
+    args=std_cmake_args+ ['-DFEELPP_ENABLE_TESTS=OFF', '-DFEELPP_ENABLE_IPOPT=OFF', '-Wno-dev']
 
     dirs = ['cmake', 'contrib', 'feel', 'applications/mesh']
     Dir.mkdir 'opt'
