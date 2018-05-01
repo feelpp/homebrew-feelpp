@@ -43,7 +43,7 @@ class Feelpp < Formula
     # had to keep application for mesh_partitioner
     args=std_cmake_args+ ['-DFEELPP_ENABLE_TESTS=OFF', '-DFEELPP_ENABLE_IPOPT=OFF', '-Wno-dev']
 
-    dirs = ['cmake', 'contrib', 'feel', 'applications/mesh']
+    dirs = ['cmake', 'contrib', 'feel', 'applications/mesh', 'quickstart']
     Dir.mkdir 'opt'
     cd 'opt' do
       system "cmake", "..", *args
@@ -51,6 +51,17 @@ class Feelpp < Formula
         cd "#{dir}" do
           system "make", "-j#{ENV.make_jobs}"
           system "make", "install"
+        end
+      end
+    end
+
+    dirs = ['quickstart']
+    cd 'opt' do
+      dirs.each do |dir|
+        cd "#{dir}" do
+          system "make", "-j#{ENV.make_jobs}"
+          system "make", "install"
+          system "ctest", "-R", "."
         end
       end
     end
