@@ -29,6 +29,7 @@ class FeelppBase < Formula
       system "cmake", "../quickstart", *args
       system "make", "-j#{ENV.make_jobs}"
       system "make","install"
+      system "ctest","-R", "."
     end
   end
 
