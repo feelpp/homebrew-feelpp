@@ -27,7 +27,7 @@ class Feelpp < Formula
   depends_on 'gmsh' => :recommended #feel++ can download and install it
   depends_on 'scalapack'
   depends_on 'petsc'
-  depends_on 'slepc' => :recommended
+#  depends_on 'slepc' => :recommended
   depends_on 'boost' => ['c++17']
   depends_on 'boost-mpi' => ['c++17']
   depends_on 'ann' => :recommended
