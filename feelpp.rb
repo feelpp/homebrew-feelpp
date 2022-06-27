@@ -30,7 +30,7 @@ class Feelpp < Formula
 #  depends_on 'slepc' => :recommended
   depends_on 'boost' => ['c++17']
   depends_on 'boost-mpi' => ['c++17']
-  depends_on 'ann' => :recommended
+#  depends_on 'ann' => :recommended
   depends_on 'glpk' => :recommended
   depends_on 'doxygen' => :optional
 
