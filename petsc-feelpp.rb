@@ -44,7 +44,6 @@ class PetscFeelpp < Formula
                           "--FC=mpif90",
                           "--download-cmake",
                           "--download-metis","--download-parmetis", "--download-ptscotch","--download-scalapack",
-                          "--download-superlu_dist", 
                           "--download-mumps",
                           "MAKEFLAGS=$MAKEFLAGS"
     system "make", "all"
