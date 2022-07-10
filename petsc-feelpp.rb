@@ -1,4 +1,4 @@
-class Petsc < Formula
+class PetscFeelpp < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (real)"
   homepage "https://petsc.org/"
   url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.17.3.tar.gz"
@@ -30,6 +30,7 @@ class Petsc < Formula
 
   uses_from_macos "python" => :build
 
+  conflicts_with "petsc", because: ""
   conflicts_with "petsc-complex", because: "petsc must be installed with either real or complex support, not both"
 
   def install
@@ -41,9 +42,9 @@ class Petsc < Formula
                           "--CXX=mpicxx",
                           "--F77=mpif77",
                           "--FC=mpif90",
-                          "–download-parmetis", "–download-ptscotch",
-                          "–download-superlu_dist", 
-                          "–download-mumps",
+                          "-download-parmetis", "-download-ptscotch",
+                          "-download-superlu_dist", 
+                          "-download-mumps",
                           "MAKEFLAGS=$MAKEFLAGS"
     system "make", "all"
     system "make", "install"
