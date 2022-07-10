@@ -21,7 +21,7 @@ class PetscFeelpp < Formula
 
   depends_on "hdf5"
   depends_on "hwloc"
-  depends_on "metis"
+#  depends_on "metis"
   depends_on "netcdf"
   depends_on "open-mpi"
   depends_on "openblas"
@@ -42,7 +42,7 @@ class PetscFeelpp < Formula
                           "--CXX=mpicxx",
                           "--F77=mpif77",
                           "--FC=mpif90",
-                          "-download-parmetis", "-download-ptscotch",
+                          "-download-metis","-download-parmetis", "-download-ptscotch",
                           "-download-superlu_dist", 
                           "-download-mumps",
                           "MAKEFLAGS=$MAKEFLAGS"
