@@ -25,7 +25,7 @@ class PetscFeelpp < Formula
   depends_on "netcdf"
   depends_on "open-mpi"
   depends_on "openblas"
-  depends_on "scalapack"
+#  depends_on "scalapack"
   depends_on "suite-sparse"
 
   uses_from_macos "python" => :build
@@ -42,7 +42,7 @@ class PetscFeelpp < Formula
                           "--CXX=mpicxx",
                           "--F77=mpif77",
                           "--FC=mpif90",
-                          "-download-metis","-download-parmetis", "-download-ptscotch",
+                          "-download-metis","-download-parmetis", "-download-ptscotch","-download-scalapack",
                           "-download-superlu_dist", 
                           "-download-mumps",
                           "MAKEFLAGS=$MAKEFLAGS"
