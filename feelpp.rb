@@ -19,6 +19,7 @@ class Feelpp < Formula
   version '0.110.0-rc.2'
   sha256 '70418fb0ce9f5069190fcc1677615663dbca71cea39e2b858356476a9e8627cf'
 
+  # on M1 cln must be compiled from source and HEAD/installed like this: brew install --build-from-source cln --HEAD
   depends_on 'cmake' => :build
   depends_on 'cln'
   depends_on 'mongo-c'
