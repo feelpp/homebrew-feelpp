@@ -2,7 +2,7 @@ class PetscFeelpp < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (real)"
   homepage "https://petsc.org/"
   url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.18.1.tar.gz"
-  sha256 "9da802e703ad79fb7ef0007d17f68916573011073ee9712dcd1673537f6a5f68"
+  sha256 "02f5979a22f5961bb775d527f8450db77bc6a8d2541f3b05fb586829b82e9bc8"
   license "BSD-2-Clause"
 
   livecheck do
@@ -43,7 +43,7 @@ class PetscFeelpp < Formula
                           "--F77=mpif77",
                           "--FC=mpif90",
                           "--download-cmake",
-                          "--download-metis","--download-parmetis", "--download-ptscotch","--download-scalapack",
+                          "--download-metis","--download-parmetis", "--download-bison", "--download-ptscotch","--download-scalapack",
                           "--download-mumps",
                           "MAKEFLAGS=$MAKEFLAGS"
     system "make", "all"
