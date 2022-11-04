@@ -30,7 +30,7 @@ class PetscFeelpp < Formula
 
   uses_from_macos "python" => :build
 
-  conflicts_with "petsc", because: ""
+  conflicts_with "petsc", because: "petsc does not support mumps"
   conflicts_with "petsc-complex", because: "petsc must be installed with either real or complex support, not both"
 
   def install
