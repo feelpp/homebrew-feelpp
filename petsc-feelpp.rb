@@ -1,8 +1,8 @@
 class PetscFeelpp < Formula
   desc "Portable, Extensible Toolkit for Scientific Computation (real)"
   homepage "https://petsc.org/"
-  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.18.1.tar.gz"
-  sha256 "02f5979a22f5961bb775d527f8450db77bc6a8d2541f3b05fb586829b82e9bc8"
+  url "https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.19.1.tar.gz"
+  sha256 "74db60c53c80b48d5c39e07bc39a883ecced88b9f24a5de17cf6f485a903e120"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class PetscFeelpp < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "846ac0085b3e3d73568425f3591be0c923b6ac288f933a203af4fec6b9f98786"
-    sha256 arm64_big_sur:  "45a61f15873ccfdfd3c8cb43c1d9960ad4675a95c4659f730156fd53c1098ea5"
-    sha256 monterey:       "d82144fbf51b2ac0e654ecbe04b72155e0ccff2ca862dceeac17edddc0f95eb8"
-    sha256 big_sur:        "bf3f6803645d7bf8a3716508976906b1af7bfd314b4f6545b4722828062a8b9e"
-    sha256 catalina:       "151867f3ef7a1b13175c27564db1e6ce9ce3512845808c89e75c78eda0be91af"
-    sha256 x86_64_linux:   "a7008b9d49f5bd82a2fd17952cc46ddd0c77180133e8b4e097baa877d6ffa8da"
+#    sha256 arm64_monterey: "846ac0085b3e3d73568425f3591be0c923b6ac288f933a203af4fec6b9f98786"
+#    sha256 arm64_big_sur:  "45a61f15873ccfdfd3c8cb43c1d9960ad4675a95c4659f730156fd53c1098ea5"
+#    sha256 monterey:       "d82144fbf51b2ac0e654ecbe04b72155e0ccff2ca862dceeac17edddc0f95eb8"
+#    sha256 big_sur:        "bf3f6803645d7bf8a3716508976906b1af7bfd314b4f6545b4722828062a8b9e"
+#    sha256 catalina:       "151867f3ef7a1b13175c27564db1e6ce9ce3512845808c89e75c78eda0be91af"
+#    sha256 x86_64_linux:   "a7008b9d49f5bd82a2fd17952cc46ddd0c77180133e8b4e097baa877d6ffa8da"
   end
 
   depends_on "hdf5"
@@ -30,7 +30,7 @@ class PetscFeelpp < Formula
 
   uses_from_macos "python" => :build
 
-  conflicts_with "petsc", because: "petsc does not support mumps"
+  conflicts_with "petsc", because: ""
   conflicts_with "petsc-complex", because: "petsc must be installed with either real or complex support, not both"
 
   def install
@@ -43,8 +43,8 @@ class PetscFeelpp < Formula
                           "--F77=mpif77",
                           "--FC=mpif90",
                           "--download-cmake",
-                          "--download-metis","--download-parmetis", "--download-bison", "--download-ptscotch","--download-scalapack",
-                          "--download-mumps",
+                          "--download-metis","--download-parmetis", "--download-ptscotch","--download-scalapack",
+                          "--download-mumps","--download-bison",
                           "MAKEFLAGS=$MAKEFLAGS"
     system "make", "all"
     system "make", "install"
